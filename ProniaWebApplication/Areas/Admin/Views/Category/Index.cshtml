@@ -3,6 +3,13 @@
 @{
     int count = 0;
 }
+<h2>
+    <div class="container">
+        Categories
+
+        <a class="btn btn-primary" asp-action="Create"> Create</a>
+    </div>
+</h2>
 <div class="container">
     <table class="table">
         <thead>
@@ -22,7 +29,7 @@
                     <td> @item.Id</td>
                     <td>@item.Name</td>
                     <td>@item.Products.Count()</td>
-                    <td > <a class="btn btn-primary" asp-action="Update" asp-controller="category" asp-route-id=@item.Id>Update</a>
+                    <td > <a class="btn btn-warning" asp-action="Update" asp-controller="category" asp-route-id=@item.Id>Update</a>
                         <a class="btn btn-danger" asp-action="Delete" asp-controller="category" asp-route-id=@item.Id>Delete</a>
                         </td>
                    

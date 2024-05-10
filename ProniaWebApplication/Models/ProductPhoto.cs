@@ -1,6 +1,6 @@
 ﻿namespace ProniaWebApplication.Models
 {
-    public class ProductPhoto
+    public class ProductPhoto 
     {
         public int Id { get; set; }
         public string PhotoUrl { get; set; }

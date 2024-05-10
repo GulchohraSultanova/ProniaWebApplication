@@ -16,10 +16,10 @@ namespace ProniaWebApplication.Controllers
             AppDbContext = appDbContext;
         }
 
-        public async Task<IActionResult> Index()
+        public  IActionResult Index()
 
         {
-            List<Product> products=await AppDbContext.Products.Include(x=>x.Photos).Where(x=>x.Photos.Count()>0).ToListAsync();
+            List<Product> products = AppDbContext.Products.Include(x => x.Photos).Where(x => x.Photos.Count() > 0).ToList();
             return View(products);
         }
 

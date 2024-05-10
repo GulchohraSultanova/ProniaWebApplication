@@ -12,6 +12,7 @@ namespace ProniaWebApplication.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<ProductPhoto> Photos { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
 
     }
 }
