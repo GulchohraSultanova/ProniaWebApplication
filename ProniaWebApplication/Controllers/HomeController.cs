@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProniaWebApplication.DAL;
 using ProniaWebApplication.Models;
+using ProniaWebApplication.ViewModel;
 using System.Diagnostics;
 
 namespace ProniaWebApplication.Controllers
@@ -20,7 +21,12 @@ namespace ProniaWebApplication.Controllers
 
         {
             List<Product> products = AppDbContext.Products.Include(x => x.Photos).Where(x => x.Photos.Count() > 0).ToList();
-            return View(products);
+            HomeVm vm = new HomeVm()
+            {
+               Products = products,
+               Sliders=AppDbContext.Sliders.ToList(),
+            };
+            return View(vm);
         }
 
         
