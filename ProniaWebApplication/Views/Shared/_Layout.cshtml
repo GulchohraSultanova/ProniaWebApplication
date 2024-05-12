@@ -125,12 +125,24 @@
                                             </button>
                                             <ul class="dropdown-menu"
                                                 aria-labelledby="settingButton">
-                                                <li>
-                                                    <a class="dropdown-item" asp-action="account" asp-controller="related">My account</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" asp-action="loginregister" asp-controller="related">Login | Register</a>
-                                                </li>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="account" asp-controller="related">@User.Identity.Name</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="LogOut" asp-controller="related">LogOut</a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="account" asp-controller="related">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="loginregister" asp-controller="related">Register</a>
+                                                    </li>
+                                                }
                                             </ul>
                                         </li>
                                         <li class="d-none d-lg-block">
